@@ -7,6 +7,7 @@
 > 铁打的身体，磁铁打的床。
 
 ![只考了6分不想过了](http://upload-images.jianshu.io/upload_images/7818790-1a0621743041dbce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ` 这样会怎么样呢 `
 
 ```
