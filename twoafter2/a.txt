@@ -1,0 +1,30 @@
+In order to load the library 'toscomm' Java tries to locate the file 'libtoscomm.so' in one of the following paths:
+/usr/java/packages/lib/i386:/lib:/usr/lib
+
+The operating system is 'Linux' (i386)
+
+Trying to locate the file 'linux_x86_toscomm.lib' in the classpath
+Temporary file created: '/tmp/toscomm5510317652258804913.lib'
+Library copied successfully. Let's load it.
+Library loaded successfully
+00 00 00 00 19 04 22 0A FF DE 17 FF 
+00 00 00 00 18 04 22 0A FF E7 17 FF 
+00 00 00 00 1A 04 22 0A FF E6 17 FF 
+00 00 00 00 18 04 22 0A FF E7 17 FF 
+00 00 00 00 1A 04 22 0A FF E7 17 FF 
+00 00 00 00 18 04 22 0A FF E7 17 FF 
+00 00 00 00 18 04 22 0A FF E8 17 FF 
+00 00 00 00 19 04 22 0A FF E1 17 FF 
+00 00 00 00 1A 04 22 0A FF E4 17 FF 
+00 00 00 00 1A 04 22 0A FF EA 17 FF 
+00 00 00 00 18 04 22 0A FF E3 17 FF 
+00 00 00 00 19 04 22 0A FF E7 17 FF 
+00 00 00 00 18 04 22 0A FF E7 17 FF 
+00 00 00 00 1A 04 22 0A FF EA 17 FF 
+00 00 00 00 1A 04 22 0A FF E9 17 FF 
+00 00 00 00 19 04 22 0A FF E5 17 FF 
+00 00 00 00 18 04 22 0A FF E8 17 FF 
+00 00 00 00 1A 04 22 0A FF E9 17 FF 
+00 00 00 00 18 04 22 0A FF E8 17 FF 
+00 00 00 00 18 04 22 0A FF E7 17 FF 
+00 00 00 00 19 04 22 0A FF E4 17 FF 

@@ -1,0 +1,7 @@
+COMPONENT=SendingAppC
+
+INCLUDES= -I..
+
+CFLAGS += $(INCLUDES)
+
+include $(MAKERULES)
