@@ -1,0 +1,26 @@
+In order to load the library 'toscomm' Java tries to locate the file 'libtoscomm.so' in one of the following paths:
+/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+
+The operating system is 'Linux' (amd64)
+
+Trying to locate the file 'linux_amd64_toscomm.lib' in the classpath
+Temporary file created: '/tmp/toscomm215786463384590572.lib'
+Library copied successfully. Let's load it.
+Library loaded successfully
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 CF 12 00 00 03 83 00 15 53 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 D0 12 00 00 05 B4 00 15 52 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 D1 12 00 00 05 D8 00 15 52 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 D2 12 00 00 05 A4 00 15 52 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 D3 12 00 00 09 03 00 15 51 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 D4 12 00 00 02 79 00 15 52 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 D5 12 00 00 04 AA 00 14 54 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 D6 12 00 00 02 FB 00 15 51 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 D7 12 00 00 06 22 00 15 50 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 D8 12 00 00 04 4D 00 14 54 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 D9 12 00 00 04 75 00 14 54 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 DA 12 00 00 05 D0 00 15 55 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 DB 12 00 00 01 B6 00 13 54 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 DC 12 00 00 03 34 00 13 55 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 DD 12 00 00 04 35 00 15 52 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 DE 12 00 00 05 AA 00 15 52 
+00 FF FF 00 01 10 22 93 00 00 04 00 00 01 00 DF 12 00 00 02 32 00 11 52 
