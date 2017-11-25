@@ -1,0 +1,34 @@
+* Problem
+ + Different communication technologies sharing the same spectrum .
+ + Jamming attacks are especially harmful to wireless communication.
+ + Packet collisions force repeated backoff of  legitimate users .
+ + The locations of jammers allow a better physical arrangement of wireless devices.
+ + This paper uses a node's neighbor list changes caused by jamming attacks to localize a jammer.
+* Network Model and Jamming Model
+**  Network Modle
+     + Multihop.
+     + Stationary. 
+     + Neighbor aware. 
+     + Location aware. 
+     + Homogeneous. 
+     + Adaptive-CCA. 
+** Jamming Modle
+- Constant jammer :: We use a constant jammer that continually emits a radio signal.
+
+- Omnidirectional :: Every jammer has the same jamming range in all directions.
+
+- Nonoverlapping :: We assume there are one or more jammers in the network, but none of their jamming regions overlap.
+** Communication Range
+
+* The Effect of Jamming
+** The Effect of Jamming on the Communication Range
+** The Effect of Jamming on Network Topology
+* LSQ-BASED Jammer Localization
+** Algorithm Description
+** Estimating the Hearing Radius
+** Dealing with Signal Irregularity
+* Experiment Validation
+** Impact of the node density
+** Impact of the jammer's NLB range
+** Impact of the jammer's position
+* Summaries

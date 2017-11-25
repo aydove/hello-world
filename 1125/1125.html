@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><p class="date">Created: 2017-11-25 ÷‹¡˘ 21:34</p>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-org3ffa446">1. Problem</a></li>
+<li><a href="#/slide-orgffe2264">2. Network Model and Jamming Model</a>
+<ul>
+<li><a href="#/slide-org69e73df">2.1. Network Modle</a></li>
+<li><a href="#/slide-org2536f20">2.2. Jamming Modle</a></li>
+<li><a href="#/slide-org333db5a">2.3. Communication Range</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org0d7b06b">3. The Effect of Jamming</a>
+<ul>
+<li><a href="#/slide-org6f12eac">3.1. The Effect of Jamming on the Communication Range</a></li>
+<li><a href="#/slide-orge11cd83">3.2. The Effect of Jamming on Network Topology</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org2d2d9f9">4. LSQ-BASED Jammer Localization</a>
+<ul>
+<li><a href="#/slide-orga984429">4.1. Algorithm Description</a></li>
+<li><a href="#/slide-orgd7a7590">4.2. Estimating the Hearing Radius</a></li>
+<li><a href="#/slide-org6ee026f">4.3. Dealing with Signal Irregularity</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org12bfe0f">5. Experiment Validation</a>
+<ul>
+<li><a href="#/slide-org9dbecd1">5.1. Impact of the node density</a></li>
+<li><a href="#/slide-orga8c25e7">5.2. Impact of the jammer's NLB range</a></li>
+<li><a href="#/slide-orgdc9bbe8">5.3. Impact of the jammer's position</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org3ccdb76">6. Summaries</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="slide-org3ffa446">
+<h2 id="org3ffa446"><span class="section-number-2">1</span> Problem</h2>
+<ul>
+<li>Different communication technologies sharing the same spectrum .</li>
+<li>Jamming attacks are especially harmful to wireless communication.</li>
+<li>Packet collisions force repeated backoff of  legitimate users .</li>
+<li>The locations of jammers allow a better physical arrangement of wireless devices.</li>
+<li>This paper uses a node's neighbor list changes caused by jamming attacks to localize a jammer.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgffe2264">
+<h2 id="orgffe2264"><span class="section-number-2">2</span> Network Model and Jamming Model</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+</section>
+<section id="slide-org69e73df">
+<h3 id="org69e73df"><span class="section-number-3">2.1</span> Network Modle</h3>
+<ul>
+<li>Multihop.</li>
+<li>Stationary.</li>
+<li>Neighbor aware.</li>
+<li>Location aware.</li>
+<li>Homogeneous.</li>
+<li>Adaptive-CCA.</li>
+
+</ul>
+</section>
+<section id="slide-org2536f20">
+<h3 id="org2536f20"><span class="section-number-3">2.2</span> Jamming Modle</h3>
+<dl>
+<dt>Constant jammer</dt><dd>We use a constant jammer that continually emits a radio signal.</dd>
+
+<dt>Omnidirectional</dt><dd>Every jammer has the same jamming range in all directions.</dd>
+
+<dt>Nonoverlapping</dt><dd>We assume there are one or more jammers in the network, but none of their jamming regions overlap.</dd>
+
+</dl>
+</section>
+<section id="slide-org333db5a">
+<h3 id="org333db5a"><span class="section-number-3">2.3</span> Communication Range</h3>
+
+</section>
+</section>
+<section>
+<section id="slide-org0d7b06b">
+<h2 id="org0d7b06b"><span class="section-number-2">3</span> The Effect of Jamming</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+</section>
+<section id="slide-org6f12eac">
+<h3 id="org6f12eac"><span class="section-number-3">3.1</span> The Effect of Jamming on the Communication Range</h3>
+</section>
+<section id="slide-orge11cd83">
+<h3 id="orge11cd83"><span class="section-number-3">3.2</span> The Effect of Jamming on Network Topology</h3>
+</section>
+</section>
+<section>
+<section id="slide-org2d2d9f9">
+<h2 id="org2d2d9f9"><span class="section-number-2">4</span> LSQ-BASED Jammer Localization</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</section>
+<section id="slide-orga984429">
+<h3 id="orga984429"><span class="section-number-3">4.1</span> Algorithm Description</h3>
+</section>
+<section id="slide-orgd7a7590">
+<h3 id="orgd7a7590"><span class="section-number-3">4.2</span> Estimating the Hearing Radius</h3>
+</section>
+<section id="slide-org6ee026f">
+<h3 id="org6ee026f"><span class="section-number-3">4.3</span> Dealing with Signal Irregularity</h3>
+</section>
+</section>
+<section>
+<section id="slide-org12bfe0f">
+<h2 id="org12bfe0f"><span class="section-number-2">5</span> Experiment Validation</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+</section>
+<section id="slide-org9dbecd1">
+<h3 id="org9dbecd1"><span class="section-number-3">5.1</span> Impact of the node density</h3>
+</section>
+<section id="slide-orga8c25e7">
+<h3 id="orga8c25e7"><span class="section-number-3">5.2</span> Impact of the jammer's NLB range</h3>
+</section>
+<section id="slide-orgdc9bbe8">
+<h3 id="orgdc9bbe8"><span class="section-number-3">5.3</span> Impact of the jammer's position</h3>
+</section>
+</section>
+<section>
+<section id="slide-org3ccdb76">
+<h2 id="org3ccdb76"><span class="section-number-2">6</span> Summaries</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
