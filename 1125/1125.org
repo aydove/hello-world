@@ -1,34 +1,110 @@
 * Problem
- + Different communication technologies sharing the same spectrum .
- + Jamming attacks are especially harmful to wireless communication.
- + Packet collisions force repeated backoff of  legitimate users .
- + The locations of jammers allow a better physical arrangement of wireless devices.
- + This paper uses a node's neighbor list changes caused by jamming attacks to localize a jammer.
++ Different communication technologies sharing the same spectrum.
++ Jamming attacks are especially harmful to wireless communication.
++ Packet collisions force repeated backoff of  legitimate users.
++ The locations of jammers allow a better physical arrangement of wireless devices.
++ This paper uses a node's neighbor list changes caused by jamming attacks to localize a jammer.
 * Network Model and Jamming Model
 **  Network Modle
-     + Multihop.
-     + Stationary. 
-     + Neighbor aware. 
-     + Location aware. 
-     + Homogeneous. 
-     + Adaptive-CCA. 
++ Multihop
++ Stationary
++ Neighbor aware
++ Location aware
++ Homogeneous
++ Adaptive-CCA
 ** Jamming Modle
 - Constant jammer :: We use a constant jammer that continually emits a radio signal.
-
 - Omnidirectional :: Every jammer has the same jamming range in all directions.
-
 - Nonoverlapping :: We assume there are one or more jammers in the network, but none of their jamming regions overlap.
 ** Communication Range
-
-* The Effect of Jamming
-** The Effect of Jamming on the Communication Range
-** The Effect of Jamming on Network Topology
+- The hearing range :: The hearing range of A specifies the area within which the potential transmitters can deliver their message to A .
+- The sending range :: The sending range of A defines the region within which the potential receivers can receive the messages of A .
+* Communication in Nonjamming Scenarios
+** Signal-To-Noise Ratio (SNR)
+The threshold required to decode a signal successfully.
+\begin{equation}
+ (SNR)_{B \to A} < \gamma_0 
+\end{equation}
+** Free-Space Propagation Model
+Consider the standard free-space propagation model, the received power is:
+\begin{equation}
+ P_R = \frac{P_{T}G}{4{\pi}d^2}.
+\end{equation}
+* The Effect of Jamming on Network Topology
+** Classification Schema
+- Unaffected node :: A node can receive packets from all of its neighbors .
+- Jammed node :: A node cannot receive messages from any of the unaffected nodes . 
+- Boundary node :: A boundary node can receive packets from part of its neighbors but not from all its neighbors .
+** Classification Figure
+[[./1125/class.png]]
 * LSQ-BASED Jammer Localization
 ** Algorithm Description
+*** Simple Example 
+ Consider the example illustrated in this figure:
+ [[./1125/se1.png]]
+*** Scenario Analysis
+ If B happens to be located at the edge of the hearing range of A, then we have:
+\begin{equation}
+ (SNR)_{B \to A} \approx \gamma_0 ,
+ d_{AB} = r_{h_A} ,
+ (SNR)_{B \to A} \approx \frac{{P_T}/{d^{2}_{AB}}}{{P_J}/{d^{2}_{JA}}} .
+\end{equation}
+ Therefore, we can obtain the following formula:
+\begin{equation}
+ (x_A - x_J)^2 + (y_A - y_J)^2 = {\beta}r^{2}_{h_A} .
+\end{equation}
+*** Localization Formula
+\begin{equation}
+ (x_1 - x_J)^2 + (y_1 - y_J)^2 = {\beta}r^{2}_{h_1}  \\
+ (x_2 - x_J)^2 + (y_2 - y_J)^2 = {\beta}r^{2}_{h_2}   \\
+                     \vdots                                              \\
+  (x_m - x_J)^2 + (y_m - y_J)^2 = {\beta}r^{2}_{h_m}     \\
+    \textbf{z} = [x_J,y_J,\beta]^T  
+\end{equation}
 ** Estimating the Hearing Radius
+*** Two Specially Located Nodes
+- Lower bound :: The furthest neighbor that Node A can still hear from.
+- Upper bound :: The closest node that Node A cannot hear from.
+*** The Hearing Radius
+The hearing radius of A can be estimated as the mean value of these two kind of bounds.
+ [[./1125/hr.png]]
+* Localizing a Jammer in Reality
+** Log-Normal Shadowing Model
+The log-normal shadowing model captures both path loss versus distance along with the random attenuation due to blockage from objects. 
+\begin{equation}
+ PL(d) = PL(d_0) - 10 \cdot \eta \cdot \log(\frac{d}{d_0}) + X_{\sigma}
+\end{equation}
+\begin{equation}
+ P_R = \frac{P_{T}G}{4{\pi}d^2}
+\end{equation}
 ** Dealing with Signal Irregularity
+*** Centroid-Based Localization (CL)
+Consider that there are m boundary nodes, the position of the jammer can be estimated by:
+\begin{equation}
+\hat{J} = (\hat{x}_J , \hat{y}_J) = ( \frac{\sum_{k=1}^{m}x_k}{m} ,  \frac{\sum_{k=1}^{m}y}{m} ) .
+\end{equation}
+*** Adaptive LSQ Localization
+ Combines the CL method with the LSQ algorithm.
+[[./1125/ALSQ.png]]
 * Experiment Validation
 ** Impact of the node density
+As N increases, the performance of the adaptive LSQ-based algorithm improves for all .
+[[./1125/nd.png]]
 ** Impact of the jammer's NLB range
+As the jammer's NLB range increases, the accuracy of the estimated jammer's location does not change much.
+[[./1125/nr.png]]
 ** Impact of the jammer's position
+When the jammer is located at the corner, the mean estimation errors become around 30 m.
+[[./1125/jp.png]]
 * Summaries
++ Network Model and Jamming Model
++ Communication Range！！The hearing range&The sending range
++ LSQ-BASED Jammer Localization
++ Estimating the Hearing Radius
++ Dealing with Signal Irregularity！！CL
++ Experiment Validation
+#+TITLE:     Emacs org-mode examples
+#test{font-size:14px;}
+#+AUTHOR:    Eric H. Neilsen, Jr.
+#+EMAIL:     neilsen@fnal.gov
+#+OPTIONS: toc:1

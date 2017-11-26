@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title></title>
+<title>Emacs org-mode examples</title>
+<meta name="author" content="(Eric H. Neilsen, Jr.)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
@@ -21,57 +22,37 @@
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><p class="date">Created: 2017-11-25 ÖÜÁù 21:34</p>
+<section id="sec-title-slide"><h1 class="title">Emacs org-mode examples</h1><h2 class="author">Eric H. Neilsen, Jr.</h2><p class="date">Created: 2017-11-26 å‘¨æ—¥ 21:15</p>
 </section>
 <section id="table-of-contents">
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-org3ffa446">1. Problem</a></li>
-<li><a href="#/slide-orgffe2264">2. Network Model and Jamming Model</a>
-<ul>
-<li><a href="#/slide-org69e73df">2.1. Network Modle</a></li>
-<li><a href="#/slide-org2536f20">2.2. Jamming Modle</a></li>
-<li><a href="#/slide-org333db5a">2.3. Communication Range</a></li>
-</ul>
-</li>
-<li><a href="#/slide-org0d7b06b">3. The Effect of Jamming</a>
-<ul>
-<li><a href="#/slide-org6f12eac">3.1. The Effect of Jamming on the Communication Range</a></li>
-<li><a href="#/slide-orge11cd83">3.2. The Effect of Jamming on Network Topology</a></li>
-</ul>
-</li>
-<li><a href="#/slide-org2d2d9f9">4. LSQ-BASED Jammer Localization</a>
-<ul>
-<li><a href="#/slide-orga984429">4.1. Algorithm Description</a></li>
-<li><a href="#/slide-orgd7a7590">4.2. Estimating the Hearing Radius</a></li>
-<li><a href="#/slide-org6ee026f">4.3. Dealing with Signal Irregularity</a></li>
-</ul>
-</li>
-<li><a href="#/slide-org12bfe0f">5. Experiment Validation</a>
-<ul>
-<li><a href="#/slide-org9dbecd1">5.1. Impact of the node density</a></li>
-<li><a href="#/slide-orga8c25e7">5.2. Impact of the jammer's NLB range</a></li>
-<li><a href="#/slide-orgdc9bbe8">5.3. Impact of the jammer's position</a></li>
-</ul>
-</li>
-<li><a href="#/slide-org3ccdb76">6. Summaries</a></li>
+<li><a href="#/slide-org450a4df">1. Problem</a></li>
+<li><a href="#/slide-org4534580">2. Network Model and Jamming Model</a></li>
+<li><a href="#/slide-org63f71a3">3. Communication in Nonjamming Scenarios</a></li>
+<li><a href="#/slide-orgf98e1c3">4. The Effect of Jamming on Network Topology</a></li>
+<li><a href="#/slide-org5bda41f">5. LSQ-BASED Jammer Localization</a></li>
+<li><a href="#/slide-orgb6ae0d3">6. Localizing a Jammer in Reality</a></li>
+<li><a href="#/slide-org66ca870">7. Experiment Validation</a></li>
+<li><a href="#/slide-org4a5e969">8. Summaries</a></li>
 </ul>
 </div>
 </div>
 </section>
 <section>
-<section id="slide-org3ffa446">
-<h2 id="org3ffa446"><span class="section-number-2">1</span> Problem</h2>
+<section id="slide-org450a4df">
+<h2 id="org450a4df"><span class="section-number-2">1</span> Problem</h2>
 <ul>
-<li>Different communication technologies sharing the same spectrum .</li>
+<li>Different communication technologies sharing the same spectrum.</li>
 <li>Jamming attacks are especially harmful to wireless communication.</li>
-<li>Packet collisions force repeated backoff of  legitimate users .</li>
+<li>Packet collisions force repeated backoff of  legitimate users.</li>
 <li>The locations of jammers allow a better physical arrangement of wireless devices.</li>
 <li>This paper uses a node's neighbor list changes caused by jamming attacks to localize a jammer.</li>
 
@@ -79,87 +60,263 @@
 </section>
 </section>
 <section>
-<section id="slide-orgffe2264">
-<h2 id="orgffe2264"><span class="section-number-2">2</span> Network Model and Jamming Model</h2>
+<section id="slide-org4534580">
+<h2 id="org4534580"><span class="section-number-2">2</span> Network Model and Jamming Model</h2>
 <div class="outline-text-2" id="text-2">
 </div>
 </section>
-<section id="slide-org69e73df">
-<h3 id="org69e73df"><span class="section-number-3">2.1</span> Network Modle</h3>
+<section id="slide-orgc848099">
+<h3 id="orgc848099"><span class="section-number-3">2.1</span> Network Modle</h3>
 <ul>
-<li>Multihop.</li>
-<li>Stationary.</li>
-<li>Neighbor aware.</li>
-<li>Location aware.</li>
-<li>Homogeneous.</li>
-<li>Adaptive-CCA.</li>
+<li>Multihop</li>
+<li>Stationary</li>
+<li>Neighbor aware</li>
+<li>Location aware</li>
+<li>Homogeneous</li>
+<li>Adaptive-CCA</li>
 
 </ul>
 </section>
-<section id="slide-org2536f20">
-<h3 id="org2536f20"><span class="section-number-3">2.2</span> Jamming Modle</h3>
+<section id="slide-org1a39c0d">
+<h3 id="org1a39c0d"><span class="section-number-3">2.2</span> Jamming Modle</h3>
 <dl>
 <dt>Constant jammer</dt><dd>We use a constant jammer that continually emits a radio signal.</dd>
-
 <dt>Omnidirectional</dt><dd>Every jammer has the same jamming range in all directions.</dd>
-
 <dt>Nonoverlapping</dt><dd>We assume there are one or more jammers in the network, but none of their jamming regions overlap.</dd>
 
 </dl>
 </section>
-<section id="slide-org333db5a">
-<h3 id="org333db5a"><span class="section-number-3">2.3</span> Communication Range</h3>
+<section id="slide-orgf8a9bec">
+<h3 id="orgf8a9bec"><span class="section-number-3">2.3</span> Communication Range</h3>
+<dl>
+<dt>The hearing range</dt><dd>The hearing range of A specifies the area within which the potential transmitters can deliver their message to A .</dd>
+<dt>The sending range</dt><dd>The sending range of A defines the region within which the potential receivers can receive the messages of A .</dd>
 
+</dl>
 </section>
 </section>
 <section>
-<section id="slide-org0d7b06b">
-<h2 id="org0d7b06b"><span class="section-number-2">3</span> The Effect of Jamming</h2>
+<section id="slide-org63f71a3">
+<h2 id="org63f71a3"><span class="section-number-2">3</span> Communication in Nonjamming Scenarios</h2>
 <div class="outline-text-2" id="text-3">
 </div>
 </section>
-<section id="slide-org6f12eac">
-<h3 id="org6f12eac"><span class="section-number-3">3.1</span> The Effect of Jamming on the Communication Range</h3>
+<section id="slide-org39b5dc1">
+<h3 id="org39b5dc1"><span class="section-number-3">3.1</span> Signal-To-Noise Ratio (SNR)</h3>
+<p>
+The threshold required to decode a signal successfully.
+</p>
+<div>
+\begin{equation}
+ (SNR)_{B \to A} < \gamma_0 
+\end{equation}
+
+</div>
 </section>
-<section id="slide-orge11cd83">
-<h3 id="orge11cd83"><span class="section-number-3">3.2</span> The Effect of Jamming on Network Topology</h3>
+<section id="slide-org9964603">
+<h3 id="org9964603"><span class="section-number-3">3.2</span> Free-Space Propagation Model</h3>
+<p>
+Consider the standard free-space propagation model, the received power is:
+</p>
+<div>
+\begin{equation}
+ P_R = \frac{P_{T}G}{4{\pi}d^2}.
+\end{equation}
+
+</div>
 </section>
 </section>
 <section>
-<section id="slide-org2d2d9f9">
-<h2 id="org2d2d9f9"><span class="section-number-2">4</span> LSQ-BASED Jammer Localization</h2>
+<section id="slide-orgf98e1c3">
+<h2 id="orgf98e1c3"><span class="section-number-2">4</span> The Effect of Jamming on Network Topology</h2>
 <div class="outline-text-2" id="text-4">
 </div>
 </section>
-<section id="slide-orga984429">
-<h3 id="orga984429"><span class="section-number-3">4.1</span> Algorithm Description</h3>
+<section id="slide-org0bf95a0">
+<h3 id="org0bf95a0"><span class="section-number-3">4.1</span> Classification Schema</h3>
+<dl>
+<dt>Unaffected node</dt><dd>A node can receive packets from all of its neighbors .</dd>
+<dt>Jammed node</dt><dd>A node cannot receive messages from any of the unaffected nodes .</dd>
+<dt>Boundary node</dt><dd>A boundary node can receive packets from part of its neighbors but not from all its neighbors .</dd>
+
+</dl>
 </section>
-<section id="slide-orgd7a7590">
-<h3 id="orgd7a7590"><span class="section-number-3">4.2</span> Estimating the Hearing Radius</h3>
-</section>
-<section id="slide-org6ee026f">
-<h3 id="org6ee026f"><span class="section-number-3">4.3</span> Dealing with Signal Irregularity</h3>
+<section id="slide-org6a54f50">
+<h3 id="org6a54f50"><span class="section-number-3">4.2</span> Classification Figure</h3>
+
+<div class="figure">
+<p><img src="./1125/class.png" alt="class.png" />
+</p>
+</div>
 </section>
 </section>
 <section>
-<section id="slide-org12bfe0f">
-<h2 id="org12bfe0f"><span class="section-number-2">5</span> Experiment Validation</h2>
+<section id="slide-org5bda41f">
+<h2 id="org5bda41f"><span class="section-number-2">5</span> LSQ-BASED Jammer Localization</h2>
 <div class="outline-text-2" id="text-5">
 </div>
 </section>
-<section id="slide-org9dbecd1">
-<h3 id="org9dbecd1"><span class="section-number-3">5.1</span> Impact of the node density</h3>
+<section id="slide-orgfd44e7a">
+<h3 id="orgfd44e7a"><span class="section-number-3">5.1</span> Algorithm Description</h3>
+<div class="outline-text-3" id="text-5-1">
+</div>
 </section>
-<section id="slide-orga8c25e7">
-<h3 id="orga8c25e7"><span class="section-number-3">5.2</span> Impact of the jammer's NLB range</h3>
+<section id="slide-org23c6709">
+<h4 id="org23c6709"><span class="section-number-4">5.1.1</span> Simple Example</h4>
+<p>
+Consider the example illustrated in this figure:
+<img src="./1125/se1.png" alt="se1.png" />
+</p>
 </section>
-<section id="slide-orgdc9bbe8">
-<h3 id="orgdc9bbe8"><span class="section-number-3">5.3</span> Impact of the jammer's position</h3>
+<section id="slide-org0071e47">
+<h4 id="org0071e47"><span class="section-number-4">5.1.2</span> Scenario Analysis</h4>
+<p>
+If B happens to be located at the edge of the hearing range of A, then we have:
+</p>
+<div>
+\begin{equation}
+ (SNR)_{B \to A} \approx \gamma_0 ,
+ d_{AB} = r_{h_A} ,
+ (SNR)_{B \to A} \approx \frac{{P_T}/{d^{2}_{AB}}}{{P_J}/{d^{2}_{JA}}} .
+\end{equation}
+
+</div>
+<p>
+Therefore, we can obtain the following formula:
+</p>
+<div>
+\begin{equation}
+ (x_A - x_J)^2 + (y_A - y_J)^2 = {\beta}r^{2}_{h_A} .
+\end{equation}
+
+</div>
+</section>
+<section id="slide-org02f87f8">
+<h4 id="org02f87f8"><span class="section-number-4">5.1.3</span> Localization Formula</h4>
+<div>
+\begin{equation}
+ (x_1 - x_J)^2 + (y_1 - y_J)^2 = {\beta}r^{2}_{h_1}  \\
+ (x_2 - x_J)^2 + (y_2 - y_J)^2 = {\beta}r^{2}_{h_2}   \\
+                     \vdots                                              \\
+  (x_m - x_J)^2 + (y_m - y_J)^2 = {\beta}r^{2}_{h_m}     \\
+    \textbf{z} = [x_J,y_J,\beta]^T  
+\end{equation}
+
+</div>
+</section>
+<section id="slide-org3267d1d">
+<h3 id="org3267d1d"><span class="section-number-3">5.2</span> Estimating the Hearing Radius</h3>
+<div class="outline-text-3" id="text-5-2">
+</div>
+</section>
+<section id="slide-org84ecf0d">
+<h4 id="org84ecf0d"><span class="section-number-4">5.2.1</span> Two Specially Located Nodes</h4>
+<dl>
+<dt>Lower bound</dt><dd>The furthest neighbor that Node A can still hear from.</dd>
+<dt>Upper bound</dt><dd>The closest node that Node A cannot hear from.</dd>
+
+</dl>
+</section>
+<section id="slide-org4a375ee">
+<h4 id="org4a375ee"><span class="section-number-4">5.2.2</span> The Hearing Radius</h4>
+<p>
+The hearing radius of A can be estimated as the mean value of these two kind of bounds.
+ <img src="./1125/hr.png" alt="hr.png" />
+</p>
 </section>
 </section>
 <section>
-<section id="slide-org3ccdb76">
-<h2 id="org3ccdb76"><span class="section-number-2">6</span> Summaries</h2>
+<section id="slide-orgb6ae0d3">
+<h2 id="orgb6ae0d3"><span class="section-number-2">6</span> Localizing a Jammer in Reality</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+</section>
+<section id="slide-org7b5b15a">
+<h3 id="org7b5b15a"><span class="section-number-3">6.1</span> Log-Normal Shadowing Model</h3>
+<p>
+The log-normal shadowing model captures both path loss versus distance along with the random attenuation due to blockage from objects. 
+</p>
+<div>
+\begin{equation}
+ PL(d) = PL(d_0) - 10 \cdot \eta \cdot \log(\frac{d}{d_0}) + X_{\sigma}
+\end{equation}
+
+</div>
+<div>
+\begin{equation}
+ P_R = \frac{P_{T}G}{4{\pi}d^2}
+\end{equation}
+
+</div>
+</section>
+<section id="slide-orge859022">
+<h3 id="orge859022"><span class="section-number-3">6.2</span> Dealing with Signal Irregularity</h3>
+<div class="outline-text-3" id="text-6-2">
+</div>
+</section>
+<section id="slide-org30db139">
+<h4 id="org30db139"><span class="section-number-4">6.2.1</span> Centroid-Based Localization (CL)</h4>
+<p>
+Consider that there are m boundary nodes, the position of the jammer can be estimated by:
+</p>
+<div>
+\begin{equation}
+\hat{J} = (\hat{x}_J , \hat{y}_J) = ( \frac{\sum_{k=1}^{m}x_k}{m} ,  \frac{\sum_{k=1}^{m}y}{m} ) .
+\end{equation}
+
+</div>
+</section>
+<section id="slide-org5f01454">
+<h4 id="org5f01454"><span class="section-number-4">6.2.2</span> Adaptive LSQ Localization</h4>
+<p>
+Combines the CL method with the LSQ algorithm.
+<img src="./1125/ALSQ.png" alt="ALSQ.png" />
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org66ca870">
+<h2 id="org66ca870"><span class="section-number-2">7</span> Experiment Validation</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+</section>
+<section id="slide-orgf964c51">
+<h3 id="orgf964c51"><span class="section-number-3">7.1</span> Impact of the node density</h3>
+<p>
+As N increases, the performance of the adaptive LSQ-based algorithm improves for all .
+<img src="./1125/nd.png" alt="nd.png" />
+</p>
+</section>
+<section id="slide-orgddd2c1f">
+<h3 id="orgddd2c1f"><span class="section-number-3">7.2</span> Impact of the jammer's NLB range</h3>
+<p>
+As the jammer's NLB range increases, the accuracy of the estimated jammer's location does not change much.
+<img src="./1125/nr.png" alt="nr.png" />
+</p>
+</section>
+<section id="slide-org2944992">
+<h3 id="org2944992"><span class="section-number-3">7.3</span> Impact of the jammer's position</h3>
+<p>
+When the jammer is located at the corner, the mean estimation errors become around 30 m.
+<img src="./1125/jp.png" alt="jp.png" />
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org4a5e969">
+<h2 id="org4a5e969"><span class="section-number-2">8</span> Summaries</h2>
+<ul>
+<li>Network Model and Jamming Model</li>
+<li>Communication Rangeâ€”â€”The hearing range&amp;The sending range</li>
+<li>LSQ-BASED Jammer Localization</li>
+<li>Estimating the Hearing Radius</li>
+<li>Dealing with Signal Irregularityâ€”â€”CL</li>
+<li>Experiment Validation</li>
+
+</ul>
+<p>
+#test{font-size:14px;}
+</p>
 </section>
 </section>
 </div>
